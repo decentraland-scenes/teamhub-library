@@ -1,7 +1,7 @@
 {
   "name": "team-hub-sdk7",
   "version": "1.0.0",
-  "description": "SDK7 Template scene",
+  "description": "SDK7 TeamHub",
   "main": "src/start.ts",
   "scripts": {
     "start": "sdk-commands start",
