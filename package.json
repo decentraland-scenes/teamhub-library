@@ -1,0 +1,49 @@
+{
+  "name": "team-hub-sdk7",
+  "version": "1.0.0",
+  "description": "SDK7 Template scene",
+  "main": "src/start.ts",
+  "scripts": {
+    "start": "sdk-commands start",
+    "start-new-explorer": "sdk-commands start --explorer-alpha --hub --skip-auth-screen --landscape-terrain-enabled",
+    "deploy": "sdk-commands deploy",
+    "build": "sdk-commands build",
+    "upgrade-sdk": "npm install --save-dev @dcl/sdk@latest",
+    "upgrade-sdk:next": "npm install --save-dev @dcl/sdk@next",
+        "postinstall": "copyfiles -u 2 \"node_modules/team-hub/assets/**\" \"node_modules/team-hub/images/**\" ."
+  },
+  "devDependencies": {
+    "@dcl/asset-packs": "^2.4.3",
+    "@dcl/js-runtime": "latest",
+    "@dcl/sdk": "latest",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.5.3"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=6.0.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 120,
+    "trailingComma": "none"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "dcl-ui-toolkit": "^0.10.0"
+  }
+}
