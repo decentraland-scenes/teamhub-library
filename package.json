@@ -1,6 +1,6 @@
 {
   "name": "team-hub-sdk7",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "SDK7 TeamHub",
   "main": "src/start.ts",
   "scripts": {
@@ -10,7 +10,7 @@
     "build": "sdk-commands build",
     "upgrade-sdk": "npm install --save-dev @dcl/sdk@latest",
     "upgrade-sdk:next": "npm install --save-dev @dcl/sdk@next",
-        "postinstall": "copyfiles -u 2 \"node_modules/team-hub/assets/**\" \"node_modules/team-hub/images/**\" ."
+    "postinstall": "node scripts/copy-assets.cjs"
   },
   "devDependencies": {
     "@dcl/asset-packs": "^2.4.3",
