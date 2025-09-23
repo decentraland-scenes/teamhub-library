@@ -43,7 +43,7 @@ This will copy all required resources (models `.glb`, textures `.png`, etc.) int
 ---
 
 ### 5. Import and use in your scene
-Inside your main() function in `src/index.ts`, import and start the main controller:
+Inside your main() function in `src/index.ts`, import and start TeamHub:
 
 ```ts
 import { TeamHub } from 'team-hub-sdk7'
