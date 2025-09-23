@@ -11,7 +11,6 @@ function cp(src, dst) {
   }
 }
 
-// Cambiá el nombre del paquete por el **real**
 const pkgDir = path.dirname(require.resolve('team-hub-sdk7/package.json'));
 const cwd = process.cwd();
 
@@ -19,5 +18,5 @@ for (const folder of ['assets', 'images']) {
   const from = path.join(pkgDir, folder);
   const to = path.join(cwd, folder);
   cp(from, to);
-  console.log(`[team-hub] Copiado ${from} -> ${to}`);
+  console.log(`[team-hub] Copy ${from} -> ${to}`);
 }
