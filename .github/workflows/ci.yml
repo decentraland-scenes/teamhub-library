@@ -8,16 +8,14 @@ jobs:
   lint-and-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
-      - name: Use Node.js 20
-        uses: actions/setup-node@v4
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v1
         with:
-          node-version: '20.17.x'
-          cache: 'npm'
+          node-version: 18.x
+      - name: install dependencies (skip postinstall)
+        run: npm install --ignore-scripts
 
-      - name: Install deps (skip postinstall)
-        run: npm ci --ignore-scripts
-
-      - name: Build
+      - name: npm run build
         run: npm run build
