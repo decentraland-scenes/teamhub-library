@@ -1,9 +1,9 @@
 import { engine, UiCanvasInformation } from '@dcl/sdk/ecs'
-import ReactEcs, { ReactEcsRenderer, UiEntity } from '@dcl/sdk/react-ecs'
-
+import ReactEcs, { UiEntity } from '@dcl/sdk/react-ecs'
 import * as ui from 'dcl-ui-toolkit'
 import Canvas from '../canvas/Canvas'
 import { type GameController } from './game.controller'
+import { registerMount, unregisterMount } from '../uis/ui.registry'
 
 type LayerProps = {
   k: string
@@ -27,10 +27,20 @@ const Layer = (props: LayerProps): ReactEcs.JSX.Element => (
 export class UIController {
   public canvasInfo = UiCanvasInformation.getOrNull(engine.RootEntity)
   public gameController: GameController
+  private readonly mountId: string
+  private readonly priority: number
 
-  constructor(gameController: GameController) {
-    ReactEcsRenderer.setUiRenderer(this.render.bind(this))
+  constructor(gameController: GameController, opts?: { id?: string; priority?: number }) {
     this.gameController = gameController
+    this.mountId = opts?.id ?? 'coding-cave:ui' // give it a unique namespace
+    this.priority = opts?.priority ?? 100 // lower = further back (rendered behind others)
+
+    // Plug your UI into the registry (auto-mount)
+    registerMount(this.mountId, this.render.bind(this), this.priority)
+  }
+
+  dispose(): void {
+    unregisterMount(this.mountId)
   }
 
   start(): void {}
@@ -61,7 +71,6 @@ export class UIController {
           <Layer k="dcl-ui">{ui.render()}</Layer>
           <Layer k="customization">{this.gameController.customizationUI.create()}</Layer>
           <Layer k="black-screen">{this.gameController.kickUI.createBlackScreen()}</Layer>
-          {/* <Layer k="qa-debug">{this.gameController.uiQaDebug.createUI()}</Layer> */}
         </Canvas>
       </UiEntity>
     )

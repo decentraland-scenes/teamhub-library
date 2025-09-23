@@ -1,6 +1,6 @@
 {
   "name": "team-hub-sdk7",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "SDK7 TeamHub",
   "main": "src/start.ts",
   "scripts": {
