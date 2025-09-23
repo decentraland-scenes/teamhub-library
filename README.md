@@ -23,16 +23,10 @@ npm install
 ---
 
 ### 3. Install Team Hub SDK7
-Install the packaged library (`.tgz`).  
-Example with version `1.0.2`:
+Install the packaged library.  
 
-```bash
-npm install ./team-hub-sdk7-1.0.2.tgz
-```
-
-> 📦 You can also publish it to a private registry or npm and install it with:
 > ```bash
-> npm install team-hub-sdk7
+> npm install team-hub-sdk7@latest
 > ```
 
 ---
@@ -49,7 +43,7 @@ This will copy all required resources (models `.glb`, textures `.png`, etc.) int
 ---
 
 ### 5. Import and use in your scene
-In your `src/start.ts`, import and start the main controller:
+Inside your main() function in `src/index.ts`, import and start the main controller:
 
 ```ts
 import { TeamHub } from 'team-hub-sdk7'
