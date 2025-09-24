@@ -50,7 +50,9 @@ Inside your main() function in `src/index.ts`, import and start TeamHub:
 ```ts
 import { TeamHub } from 'team-hub-sdk7'
 
+export function main(): void {
 const hub = new TeamHub()
+}
 ```
 
 ---
