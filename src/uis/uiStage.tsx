@@ -1,7 +1,7 @@
 import { engine, MeshCollider } from '@dcl/sdk/ecs'
-import { EntityNames } from '../../assets/scene/entity-names'
 import { type GameController } from '../controllers/game.controller'
 import { withPlayerInfo } from '../utils'
+import { stageWall } from '../entities'
 
 export class StageUI {
   public hostTarget = engine.addEntity()
@@ -10,7 +10,7 @@ export class StageUI {
   public stageUiVisibility: boolean = false
   playerSelected: string = ''
 
-  private readonly stageWall = engine.getEntityByName<EntityNames>(EntityNames.StageWall)
+  private readonly stageWall = stageWall
 
   private readonly stageWallColliderComponent = MeshCollider.get(this.stageWall)
 
