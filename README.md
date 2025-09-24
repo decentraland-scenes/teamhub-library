@@ -1,7 +1,9 @@
-# Team Hub SDK7
+# Team Hub SDK7 [Library]
 
 Team Hub is a **Decentraland SDK7** library that provides controllers, components, and ready-to-use assets for your scenes.  
 This repository was originally a standalone scene but was adapted as a **library** so you can integrate it into your own projects.
+
+👉 Original project: [Team Hub Scene Repository](https://github.com/decentraland-scenes/team-hub) 
 
 ---
 
