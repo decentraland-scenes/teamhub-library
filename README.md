@@ -28,7 +28,7 @@ npm install
 Install the packaged library.  
 
 > ```bash
-> npm install team-hub-sdk7@latest
+> npm install @dcl-regenesislabs/teamhub-lib@latest
 > ```
 
 ---
@@ -37,7 +37,7 @@ Install the packaged library.
 To make sure **GLBs and images** are available in your scene, run the included script:
 
 ```bash
-node node_modules/team-hub-sdk7/scripts/copy-assets.cjs
+node node_modules/@dcl-regenesislabs/teamhub-lib/scripts/copy-assets.cjs
 ```
 
 This will copy all required resources (models `.glb`, textures `.png`, etc.) into your `assets/` folder.
@@ -48,7 +48,7 @@ This will copy all required resources (models `.glb`, textures `.png`, etc.) int
 Inside your main() function in `src/index.ts`, import and start TeamHub:
 
 ```ts
-import { TeamHub } from 'team-hub-sdk7'
+import { TeamHub } from '@dcl-regenesislabs/teamhub-lib'
 
 export function main(): void {
 const hub = new TeamHub()
