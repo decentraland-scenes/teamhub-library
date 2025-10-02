@@ -1,5 +1,5 @@
 {
-  "name": "team-hub-sdk7",
+  "name": "@dcl-regenesislabs/teamhub-lib",
   "version": "1.0.4",
   "description": "SDK7 TeamHub",
   "main": "src/start.ts",
