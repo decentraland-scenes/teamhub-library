@@ -11,7 +11,7 @@ function cp(src, dst) {
   }
 }
 
-const pkgDir = path.dirname(require.resolve('@dcl-regenesislabs/teamhub-lib/package.json'));
+const pkgDir = path.join(__dirname, '..')
 const cwd = process.cwd();
 
 for (const folder of ['assets', 'images']) {
