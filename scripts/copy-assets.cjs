@@ -11,12 +11,12 @@ function cp(src, dst) {
   }
 }
 
-const pkgDir = path.dirname(require.resolve('team-hub-sdk7/package.json'));
+const pkgDir = path.join(__dirname, '..')
 const cwd = process.cwd();
 
 for (const folder of ['assets', 'images']) {
   const from = path.join(pkgDir, folder);
   const to = path.join(cwd, folder);
   cp(from, to);
-  console.log(`[team-hub] Copy ${from} -> ${to}`);
+  console.log(`[@dcl-regenesislabs/teamhub-lib] Copy ${from} -> ${to}`);
 }
