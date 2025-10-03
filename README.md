@@ -204,5 +204,5 @@ For bugs or feature requests, please open an issue on the [original repository](
 
 <p align="center">
   Built with ❤️ for the Decentraland community<br>
-  <sub>Powered by <a href="https://docs.decentraland.org">DCL Regenesis Labs</a></sub>
+  <sub>Powered by <a href="https://dclregenesislabs.xyz/">DCL Regenesis Labs</a></sub>
 </p>
