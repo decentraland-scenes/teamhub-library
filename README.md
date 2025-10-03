@@ -7,7 +7,6 @@
 Originally a standalone scene, Team Hub has been adapted as a reusable library to help content creators quickly add event management and interactive features to their projects.
 
 👉 **Original project:** [Team Hub Scene Repository](https://github.com/decentraland-scenes/team-hub)
-
 ---
 
 ## ✨ Features
