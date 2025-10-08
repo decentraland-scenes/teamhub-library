@@ -6,7 +6,6 @@
 
 Originally a standalone scene, Team Hub has been adapted as a reusable library to help content creators quickly add event management and interactive features to their projects.
 
-👉 **Original project:** [Team Hub Scene Repository](https://github.com/decentraland-scenes/team-hub)
 ---
 
 ## ✨ Features
@@ -152,6 +151,37 @@ Access customization through the host menu once Team Hub is running.
 ---
 
 For detailed API documentation, see the source code in `src/controllers/`.
+
+---
+
+## 🧩 Run it as a Scene
+
+This library can also be executed directly as a **Decentraland scene** for testing or development purposes.
+
+The entry point (`index.ts`) is **ignored in the npm package** (`.npmignore`) so it won’t be included when the library is installed in other projects — but it allows you to run this repo standalone as a scene.
+
+To run it locally:
+
+```bash
+# Install dependencies
+npm install
+
+# Start the scene in the Decentraland Explorer (alpha)
+npm run start -- --explorer-alpha
+```
+
+Your local `index.ts` should look like this:
+
+```ts
+import { TeamHub } from './start'
+
+export function main(): void {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const hub = new TeamHub()
+}
+```
+
+This will launch the TeamHub environment as a standalone scene for quick iteration and visual testing before publishing or packaging as a library.
 
 ---
 
