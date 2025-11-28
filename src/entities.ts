@@ -12,9 +12,6 @@ import {
 } from '@dcl/sdk/ecs'
 import { Vector3, Quaternion } from '@dcl/sdk/math'
 
-// ---------------------------------------------
-// Entities (se asignan dentro de initManualEntities)
-// ---------------------------------------------
 export let podium: Entity
 export let videoScreen: Entity
 export let votingZone1: Entity
@@ -40,9 +37,6 @@ export let attendeePanel: Entity
 export let interactable: Entity
 export let stageGltf: Entity
 
-// ---------------------------------------------
-// Shim getEntityOrNullByName
-// ---------------------------------------------
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const __originalGetByName = engine.getEntityOrNullByName.bind(engine)
 // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -69,11 +63,6 @@ function patchGetByName(): void {
     return __manualNames.get(name) ?? null
   }
 }
-
-// ---------------------------------------------
-// Inicialización explícita de todas las entidades
-// ---------------------------------------------
-// Llamar SOLO cuando quieras crear los modelos por código
 export function initManualEntities(): void {
   if (__initializedEntities) return
   __initializedEntities = true
@@ -569,9 +558,7 @@ export function initManualEntities(): void {
     invisibleMeshesCollisionMask: 3
   })
 
-  // ---------------------------------------------
-  // Registro de nombres (igual que antes)
-  // ---------------------------------------------
+
   registerEntityName('Podium', podium)
   registerEntityName('Video Screen', videoScreen)
   registerEntityName('VotingZone1', votingZone1)
