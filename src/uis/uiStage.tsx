@@ -1,7 +1,6 @@
-import { engine, MeshCollider } from '@dcl/sdk/ecs'
+import { engine, MeshCollider, type Entity } from '@dcl/sdk/ecs'
 import { type GameController } from '../controllers/game.controller'
 import { withPlayerInfo } from '../utils'
-import { stageWall } from '../entities'
 
 export class StageUI {
   public hostTarget = engine.addEntity()
@@ -10,12 +9,25 @@ export class StageUI {
   public stageUiVisibility: boolean = false
   playerSelected: string = ''
 
-  private readonly stageWall = stageWall
-
-  private readonly stageWallColliderComponent = MeshCollider.get(this.stageWall)
+  private readonly stageWall: Entity | null = null
+  private readonly stageWallColliderComponent: ReturnType<typeof MeshCollider.get> | null = null
 
   constructor(gameController: GameController) {
     this.gameController = gameController
+    const foundStageWall = engine.getEntityOrNullByName('StageWall')
+    if (foundStageWall != null) {
+      this.stageWall = foundStageWall
+      try {
+        
+        this.stageWallColliderComponent = MeshCollider.get(this.stageWall)
+      } catch (e) {
+        
+        console.log('StageWall does not have MeshCollider at start:', e)
+        this.stageWallColliderComponent = null
+      }
+    } else {
+      console.log('StageUI: "StageWall" not found)')
+    }
 
     this.gameController.playerController.onHostChange((newHosts) => {
       this.checkPlayerAccess(newHosts)
@@ -38,11 +50,16 @@ export class StageUI {
   }
 
   lockAccessToStage(): void {
-    // Hack to ensure the collider is added
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    if (!this.stageWall || !this.stageWallColliderComponent) {
+      console.log('StageUI.lockAccessToStage: stageWall o collider no definidos, no se bloquea el escenario')
+      return
+    }
     let i = 0
     engine.addSystem(
       () => {
-        MeshCollider.createOrReplace(this.stageWall, this.stageWallColliderComponent)
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        MeshCollider.createOrReplace(this.stageWall!, this.stageWallColliderComponent!)
         i++
         if (i > 2) {
           engine.removeSystem('hackToEnsureColliderIsAdded')
@@ -54,6 +71,11 @@ export class StageUI {
   }
 
   unlockAccessToStage(): void {
+    if (this.stageWall == null) {
+      console.log('StageUI.unlockAccessToStage: stageWall no definido, nada que desbloquear')
+      return
+    }
+
     MeshCollider.deleteFrom(this.stageWall)
   }
 

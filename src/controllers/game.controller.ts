@@ -35,6 +35,8 @@ import { CreateQAUI } from '../uis/uiCreateQa'
 import { AskQuestionUI } from '../uis/uiAskQuestion'
 
 import { QAQueueUI } from '../uis/uiQaQueue'
+import { type TeamHubOptions } from '../start'
+import { initManualEntities } from '../entities'
 
 export class GameController {
   public uiController: UIController
@@ -107,7 +109,11 @@ export class GameController {
     this.uiController = new UIController(this)
   }
 
-  start(): void {
+  start(options: TeamHubOptions = {}): void {
+     if (!(options.ignoreModels ?? false)) {
+      console.log('Initializing manual entities...')
+      initManualEntities()
+    }
     this.zonePollSystem.setup()
     setupCustomization()
     setupMessageBus(this)

@@ -19,7 +19,7 @@ export const CustomizationState = engine.defineComponent('customizationState', {
 })
 const defaultCustomization = {
   accentColor: Color4.Black(),
-  textureSrc: 'https://github.com/Fanny-Pack-Studios/decentraland-teamhub/blob/main/assets/images/logo.png?raw=true'
+  textureSrc: 'https://cryptologos.cc/logos/decentraland-mana-logo.png?v=040'
   // TODO: Change this link when we migrate the repo
 }
 CustomizationState.create(customizationEntity, defaultCustomization)

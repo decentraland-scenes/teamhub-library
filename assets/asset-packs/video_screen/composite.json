@@ -49,19 +49,18 @@
         "0": {
           "json": {
             "material": {
-              "$case": "pbr",
-              "pbr": {
+              "$case": "unlit",
+              "unlit": {
                 "texture": {
                   "tex": {
                     "$case": "videoTexture",
                     "videoTexture": {
-                      "videoPlayerEntity": 0
+                      "videoPlayerEntity": "{self}",
+                      "wrapMode": 0,
+                      "filterMode": 0
                     }
                   }
-                },
-                "roughness": 1,
-                "specularIntensity": 0,
-                "metallic": 0
+                }
               }
             }
           }
