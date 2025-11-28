@@ -1,2 +1,4 @@
 /node_modules
 /src/index.ts
+main.crdt
+/assets/scene/main.composite
