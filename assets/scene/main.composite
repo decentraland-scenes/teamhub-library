@@ -1636,7 +1636,7 @@
         "serializationType": "map"
       },
       "data": {
-        "531": {
+        "0": {
           "json": {
             "gizmo": 0
           }
@@ -1969,9 +1969,10 @@
       "data": {
         "0": {
           "json": {
-            "name": "Team Building",
+            "name": "Team Hub Template",
             "description": "Team Building Decentraland",
             "thumbnail": "images/scene-thumbnail.png",
+            "ageRating": "T",
             "categories": [],
             "author": "SDK",
             "email": "",
@@ -1990,10 +1991,12 @@
             },
             "silenceVoiceChat": false,
             "disablePortableExperiences": false,
-            "skyboxConfig": {},
+            "skyboxConfig": {
+              "fixedTime": 43200
+            },
             "spawnPoints": [
               {
-                "name": "spawn1",
+                "name": "Spawn Point 1",
                 "default": true,
                 "position": {
                   "x": {
