@@ -13,8 +13,8 @@
     "postinstall": "node scripts/copy-assets.cjs"
   },
   "devDependencies": {
-    "@dcl/asset-packs": "^2.4.3",
-    "@dcl/js-runtime": "7.14.0",
+    "@dcl/asset-packs": "latest",
+    "@dcl/js-runtime": "latest",
     "@dcl/sdk": "7.14.0",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
