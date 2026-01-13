@@ -63,5 +63,6 @@
   "skyboxConfig": {
     "fixedTime": 43200
   },
-  "rating": "T"
+  "rating": "T",
+  "creator": ""
 }

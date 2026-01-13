@@ -14,6 +14,7 @@ export enum EntityNames {
   BannerBackground_2 = "BannerBackground_2",
   BannerLogo = "BannerLogo",
   BannerLogo_2 = "BannerLogo_2",
+  Fixed_View_Camera = "Fixed View Camera",
   Interactable = "Interactable",
   Logo = "Logo",
   Podium = "Podium",
