@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@dcl/asset-packs": "latest",
-    "@dcl/js-runtime": "7.17.0",
+    "@dcl/js-runtime": "latest",
     "@dcl/sdk": "latest",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
@@ -48,6 +48,7 @@
     ]
   },
   "dependencies": {
-    "dcl-ui-toolkit": "^0.10.0"
+    "dcl-ui-toolkit": "latest",
+    "@dcl-sdk/utils": "latest",
   }
 }
