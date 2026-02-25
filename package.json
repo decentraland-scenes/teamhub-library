@@ -49,6 +49,6 @@
   },
   "dependencies": {
     "dcl-ui-toolkit": "latest",
-    "@dcl-sdk/utils": "latest",
+    "@dcl-sdk/utils": "latest"
   }
 }
