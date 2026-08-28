@@ -215,6 +215,18 @@ This project is open source. See the original [Team Hub Scene Repository](https:
 
 ---
 
+## 🤖 Using AI coding assistants
+
+If you build with an AI coding assistant (Claude Code, Cursor, GitHub Copilot, and others), install the official Decentraland SDK Skills first. They teach your agent verified SDK7 patterns for every topic: scene creation, 3D models, interactivity, UI, multiplayer, deployment, and more.
+
+```
+npx skills add decentraland/sdk-skills
+```
+
+See [Vibe Coding with AI](https://docs.decentraland.org/creator/scenes-sdk7/getting-started/vibe-coding) for the full guide.
+
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome! This library is maintained as part of the Decentraland community ecosystem.
